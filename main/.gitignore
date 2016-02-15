@@ -1,0 +1,14 @@
+#Some of these are related to coox
+logs/
+telemetrie_proj/
+
+#files being edited
+*~
+
+# make and build files
+*.elf
+*.hex
+*.bin
+*.log
+*.o
+*.xml
