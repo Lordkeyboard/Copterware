@@ -23,8 +23,8 @@ int main(void)
 	NVIC_SetPriorityGrouping(4); 							/* set interrupt groups, 3 Bit for priority and 1 Bit for SubPriority */
 
 	/* ----- USART2 ----- */
-	/*USART_init(user_USART2);							*/	/* init USART2 */
-	/*USART_set_baudrate(user_USART2, 57600); 			*/	/* set Baudrate */
+	USART_init(user_USART2);								/* init USART2 */
+	USART_set_baudrate(user_USART2, 57600); 				/* set Baudrate */
 	/*USART_CTS_enable(user_USART2); 					*/	/* activate CTS-Signal */
 	/*USART_global_IRQ_enable(user_USART2, 0, 0); 		*/	/* highest priority for USART2 IRQ */
 	/*USART_IRQ_enable(user_USART2, user_USART_CTS); 	*/	/* IRQ für CTS-Signal ermöglichen */
@@ -77,6 +77,8 @@ int main(void)
 	/*}													*/
 
 	io_led_on(led_green);									/* set green LED when init complete or no button pressed */
+	USART_Sends(user_USART2, "Init complete - starting state machine.\n");
+
 
 	while(1)												/* start mainloop */
 	{
@@ -90,8 +92,9 @@ int main(void)
 		}
 		else 												/* when button not pressed */
 		{
-			tick_delay(1000); 								/* wait */
+
 			Automat_execute();								/* start the state machine*/
+			tick_delay(100); 								/* wait */
 		}
 	}
 }

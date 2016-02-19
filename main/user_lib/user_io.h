@@ -26,8 +26,8 @@ typedef enum
 {
 	led_green = (uint16_t)GPIO_Pin_12,
 	led_orange = (uint16_t)GPIO_Pin_13,
-	led_red = (uint16_t)GPIO_Pin_15,
-	led_blue = (uint16_t)GPIO_Pin_14,
+	led_red = (uint16_t)GPIO_Pin_14,
+	led_blue = (uint16_t)GPIO_Pin_15,
 	io_button = (uint16_t)GPIO_Pin_0
 } user_IO_TypeDef;
 

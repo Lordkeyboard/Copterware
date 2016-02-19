@@ -43,6 +43,15 @@ static zustand_ptr Z_start(void)								/* starting state */
 	automat_ptr z_ptr = Automat; 								/* set old state */
 
 	/* FUNCTIONS FOR FIRST STATE*/
+	io_led_off(led_green);
+	io_led_off(led_orange);
+	for(uint8_t i = 0; i < 10; i++) 					/* loop 10 times for 10 led flashes */
+	{
+		tick_delay(125); 						/* wait */
+		io_led_toggle(led_blue);
+	}
+	//USART_Wait_Send(user_USART2);
+	//USART_Send(user_USART2, 0x01);
 
 	z_ptr = Z_second;
 	return (zustand_ptr)z_ptr;									/* return functionspointer */
@@ -53,7 +62,10 @@ static zustand_ptr Z_second(void)								/* another state */
 	automat_ptr z_ptr = Automat; 								/* set old state */
 
 	/* FUNCTIONS FOR SECOND STATE */
+	io_led_on(led_orange);
+	//USART_Wait_Send(user_USART2);
+	//USART_Send(user_USART2, 0x02);
 
-	z_ptr = Z_start;
+	z_ptr = Z_second;
 	return (zustand_ptr)z_ptr;									/* return functionpointer */
 }																/* cast because return type of the function pointer has to be void */

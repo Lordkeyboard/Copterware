@@ -13,9 +13,10 @@
 #define __STM32F4_MAIN_H
 
 /******************** Includes ********************/
-//#include <stdlib.h> 													/* for malloc function */
+#include <stdlib.h> 													/* for malloc function */
+/*#include <stdio.h>												*/
 #include "misc.h" 														/* for Interrupt priorities */
-/* #include "user_usart.h" 											*/	/* user lib usart2 */
+#include "user_usart.h" 												/* user lib usart2 */
 /* #include "user_can1.h" 											*/	/* user lib can1 */
 #include "user_io.h" 													/* user lib for GPIOs */
 #include "user_systick.h" 												/* counter and timer */

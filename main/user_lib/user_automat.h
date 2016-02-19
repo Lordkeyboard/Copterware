@@ -14,7 +14,9 @@
 /******************** includes ********************/
 #include "stm32f4xx.h" 									/* for uint definition */
 #include "user_io.h" 									/* user lib für Board Button und LEDs */
-#include "user_timer.h" 								/* functions for Hardware-Timer */
+#include "user_usart.h" 								/* user lib usart */
+/* #include "user_can1.h" 							*/	/*user lib for can1 */
+#include "user_timer.h" 								/* timer functions */
 
 /******************** defines *********************/
 typedef void (*zustand_ptr)(void); 						/* Pointer for functions withour return value */
